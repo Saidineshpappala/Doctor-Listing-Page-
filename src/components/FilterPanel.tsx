@@ -1,7 +1,7 @@
 
 import { ConsultationType, Doctor, FilterState, SortOption } from "@/types/doctor";
 import { getAllSpecialties } from "@/services/doctorService";
-import { RadioGroup } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -12,7 +12,8 @@ interface FilterPanelProps {
 }
 
 const FilterPanel = ({ doctors, filterState, updateFilter }: FilterPanelProps) => {
-  const specialties = getAllSpecialties(doctors);
+  // Get all specialties, ensuring doctors array exists first
+  const specialties = doctors && doctors.length > 0 ? getAllSpecialties(doctors) : [];
 
   const handleConsultationChange = (value: string) => {
     updateFilter({ consultationType: value as ConsultationType });
