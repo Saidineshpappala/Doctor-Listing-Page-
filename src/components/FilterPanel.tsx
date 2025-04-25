@@ -31,6 +31,11 @@ const FilterPanel = ({ doctors, filterState, updateFilter }: FilterPanelProps) =
     updateFilter({ sortBy: value });
   };
 
+  // Helper function to format specialty for data-testid
+  const formatSpecialtyForTestId = (specialty: string) => {
+    return specialty.replace(/[\/\s]/g, '-');
+  };
+
   return (
     <div className="w-full bg-white rounded-lg shadow-sm p-4 space-y-6">
       {/* Consultation Type Filter */}
@@ -74,7 +79,7 @@ const FilterPanel = ({ doctors, filterState, updateFilter }: FilterPanelProps) =
                 id={`specialty-${specialty}`}
                 checked={filterState.specialties.includes(specialty)}
                 onChange={(e) => handleSpecialtyChange(specialty, e.target.checked)}
-                data-testid={`filter-specialty-${specialty.replace("/", "-")}`}
+                data-testid={`filter-specialty-${formatSpecialtyForTestId(specialty)}`}
               />
               <label htmlFor={`specialty-${specialty}`} className="text-sm">{specialty}</label>
             </div>
