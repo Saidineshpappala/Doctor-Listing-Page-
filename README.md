@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/8c0898df-26a5-4a57-b8c7-e5d2ee18475f
+Develop and deploy a doctor listing page that includes:
 
-## How can I edit this code?
+An autocomplete search bar for doctor names.
+A filter panel with:
+Consultation type (single select).
+Specialties (multi-select).
+Sort options (fees and experience).
+A doctor list rendered using data from a provided API.
+Sample UI image is attached at the bottom.
+Functionality has more weightage than UI.
 
-There are several ways of editing your application.
+Features to Implement
+1. Autocomplete Header
+A search bar at the top with dropdown suggestions.
+Suggestions show top 3 matches based on the name key.
+On clicking a suggestion or pressing Enter, the list filters accordingly.
+If no matches are found, no suggestions are shown.
+2. Dynamic Filter Panel
+Single Filter (Radio):
 
-**Use Lovable**
+Options: Video Consult, In Clinic
+Only one can be selected at a time.
+Multi Filter (Checkbox):
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8c0898df-26a5-4a57-b8c7-e5d2ee18475f) and start prompting.
+Options: Doctor specialities (from dataset).
+Doctors may have multiple specialities.
+Multiple filters can be applied simultaneously.
+Sort Filter:
 
-Changes made via Lovable will be committed automatically to this repo.
+Sort by:
+fees (ascending)
+experience (descending)
+Filters should work in combination, with the first applied filter taking precedence.
 
-**Use your preferred IDE**
+API Instructions
+API URL: https://srijandubey.github.io/campus-api-mock/SRM-C1-25.json
+Call the API to fetch all doctor data.
+All filtering, searching, and sorting must happen on the frontend.
+Show applied filters as query params in the URL.
+Navigating back should retain filters using URL query params.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8c0898df-26a5-4a57-b8c7-e5d2ee18475f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
